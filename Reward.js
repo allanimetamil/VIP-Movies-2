@@ -1,5 +1,5 @@
 const PAGE_CONFIG = {
-  home:  { url: "page1.html", free: true },
+  home:  { url: "search.html", free: false },
   page2: { url: "page2.html", free: false },
   page3: { url: "page3.html", free: false }
 };
