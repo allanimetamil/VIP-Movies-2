@@ -1,6 +1,6 @@
 (function () {
     const params = new URLSearchParams(window.location.search);
-    const next = params.get("unlock");
+    const next = params.get("reward");
 
     if (next) {
         // Normal browser fallback
