@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Movie Details</title>
+<link rel="stylesheet" href="style.css">
+<script src="movies.js"></script>
+</head>
+<body>
+
+<header>
+<a href="list.html">Back</a>
+</header>
+
+<div class="container" id="detail"></div>
+
+<script>
+const params=new URLSearchParams(window.location.search);
+const id=parseInt(params.get("id"));
+const movie=movies.find(m=>m.id===id);
+
+document.getElementById("detail").innerHTML=`
+<h2>${movie.title}</h2>
+<img src="${movie.poster}" width="250">
+<p><b>Year:</b> ${movie.year}</p>
+<p><b>Genre:</b> ${movie.genre}</p>
+<p><b>Director:</b> ${movie.director}</p>
+<p>${movie.story}</p>
+<iframe src="${movie.youtube}" allowfullscreen></iframe>
+`;
+</script>
+
+</body>
+</html>
