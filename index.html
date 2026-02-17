@@ -1,20 +1,445 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Classic Movie Info</title>
-<link rel="stylesheet" href="style.css">
+  <script src="/Bybass.js"></script>
+    <meta charset="UTF-8">
+    <title>TVK Movies</title>
+    <link rel="stylesheet"  href="./index.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&display=swap" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=NATS:wght@400&display=swap" />
 </head>
-<body>
 
-<header>
-<h2>Classic Movie Info</h2>
-<a href="list.html">Browse Movies</a>
-</header>
+<div id="myNav" class="overla">
+    <img id="close" onclick="closeNav()" src="./M Image/Close icon.png"/>
+    <img id="navimg" src="./M Image/VIP Movies.jpg"/>
+    <a href="/index.html"><img id="navb" src="./M Image/N-Home.png"/></a>
+    <a href="/feedback.html"><img id="navb" src="./M Image/N-feedback.png"/></a>
+    <a href="/About.html"><img id="navb" src="./M Image/N-about.png"/></a>
+  </div>
 
-<div class="container">
-<p>This app provides information and trailers for classic films. No streaming or downloads are provided.</p>
-<a href="search.html">Search Movies</a>
-</div>
+<body style="background-color: rgb(0, 0, 0); width: 430px;">
+
+    <div style="position: relative; background-color: rgb(0, 0, 0); height: 110px; width: 980px;">
+        <img id="menu" onclick="openNav()" src="./M Image/Menu icon.png"/>
+        <img id="title" src="./M Image/Vip Title.png"/>
+        <a href="./search.html"><img id="search" src="./M Image/Search icon.png"/></a>
+    </div>
+    <div id="slider">
+
+      
+  <a href="">
+  <div class="slides">  
+  <img class="imggg" src="" />
+  </div></a>
+  
+  <a href="">
+  <div class="slides">  
+  <img class="imggg" src="" />
+  </div></a>  
+
+  <a href="">
+  <div class="slides">  
+  <img class="imggg" src="" />
+  </div></a>
+
+  <a href="">
+  <div class="slides">  
+  <img class="imggg"src="">
+  </div></a>
+  
+  <a href="">
+   <div class="slides">  
+   <img class="imggg" src="" />
+   </div></a>
+  
+  <div id="dot"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+ </div>
+
+    <div id="top">
+        <h1 id="tt">Category Collaction</h1>
+        <a href=""><h1 id="tc">View All</h1></a></div>
+
+    <div style="position: relative; background-color:black ; width: 980px;top: 10px;margin-bottom: 5px; margin-bottom: 20px;" >
+
+        <div id="yt">
+    
+            <a href="/Movies/Horror.html"><div id="yl"><h1 id="ytt">Horror [ category ]</h1></div></a>
+            <a href="/Movies/Film Noir.html"><div id="yl"><h1 id="ytt">Film Noir [ category ]</h1></div></a>
+            <a href="/Movies/Drama.html"><div id="yl"><h1 id="ytt">Drama [ category ]</h1></div></a>
+
+        </div>
+
+        <a href="/category.html"
+        ><div id="vay"><h1 id="vayt">View All ( category )</h1><img id="ynext" src="./M Image/next.png"/></div></a>
+
+    </div>
+
+
+    <div id="top">
+        <h1 id="tt">Horror [ category ]</h1>
+        <a href="/Movies/Horror.html"><h1 id="tc">View All</h1></a></div>
+
+    <div class="scroll">
+ 
+        <a href="/Movies/Horror/Nosferatu.html" ><div id="a"><img id="ai" src=""/><h1 id="aitext">Nosferatu</h1></div></a>
+
+        <a href="/Movies/Horror/Night of the Living Dead.html"><div id="a"><img id="ai" src=""/><h1 id="aitext">Night of the Living Dead</h1></div></a>
+
+        <a href="/Movies/Horror/House on Haunted Hill.html"><div id="a"><img id="ai" src=""/><h1 id="aitext">House on Haunted Hill</h1></div></a>
+
+        <a href="/Movies/Horror/The Last Man on Earth.html"><div id="a"><img id="ai" src=""/><h1 id="aitext">The Last Man on Earth</h1></div></a>
+
+<a href="/Movies/Horror.html"><div style="background-color: black;" id="a"><img id="va" src="./M Image/View all.png"/></div></a> 
+    </div>
+
+    <div id="top">
+        <h1 id="tt">Film Noir [ category ]</h1>
+        <a href="/Movies/Film Noir.html"><h1 id="tc">View All</h1></a></div>
+
+    <div class="scroll">
+ 
+        <a href="/Movies/Film Noir/Scarlet Street.html" ><div id="a"><img id="ai" src=""/><h1 id="aitext">Scarlet Street</h1></div></a>
+
+        <a href="/Movies/Film Noir/Detour.html"><div id="a"><img id="ai" src=""/><h1 id="aitext">Detour</h1></div></a>
+
+        <a href="/Movies/Film Noir/D.O.A.html"><div id="a"><img id="ai" src=""/><h1 id="aitext">D.O.A.</h1></div></a>
+
+        <a href="/Movies/Film Noir/The Stranger.html"><div id="a"><img id="ai" src=""/><h1 id="aitext">The Stranger</h1></div></a>
+
+        <a href="/Movies/Film Noir/The Strange Love of Martha Ivers.html"><div id="a"><img id="ai" src=""/><h1 id="aitext">The Strange Love of Martha Ivers</h1></div></a>
+
+<a href="/Movies/Film Noir.html"><div style="background-color: black;" id="a"><img id="va" src="./M Image/View all.png"/></div></a> 
+    </div>
+  
+<script>
+         var index = 0;
+var slides = document.querySelectorAll(".slides");
+var dot = document.querySelectorAll(".dot");
+
+function changeSlide(){
+
+  if(index<0){
+    index = slides.length-1;
+  }
+  
+  if(index>slides.length-1){
+    index = 0;
+  }
+  
+  for(let i=0;i<slides.length;i++){
+    slides[i].style.display = "none";
+    dot[i].classList.remove("active");
+  }
+  
+  slides[index].style.display= "block";
+  dot[index].classList.add("active");
+  
+  index++;
+  
+  setTimeout(changeSlide,2000);
+  
+}
+
+changeSlide();
+
+
+    function openNav() {
+      document.getElementById("myNav").style.width = "460px";
+    }
+    
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+    </script>
 
 </body>
+    
+<style>
+  #ynext{
+    position: absolute;
+    width: 40px;
+    top: 22px;
+    left: 640px;
+  }
+
+  #va{
+    position: absolute;
+    width: 180px;
+    left: 35px;
+    top: 100px;
+  }
+
+    @keyframes fade{
+  from{
+    opacity:0.4;
+  }
+  to{
+    opacity:1;
+  }
+}
+
+#slider{
+  margin:0 auto;
+  width:980px;
+  height: 452px;
+  overflow:hidden;
+}
+
+.slides{
+  overflow:hidden;
+  animation-name:fade;
+  animation-duration:1s;
+  display:none;
+}
+
+.imggg{
+  width:960px;
+  height: 420px;
+  position: relative;
+  left: 10px;
+  border-radius: 10px;
+  border: 2px white solid;
+}
+
+#dot{
+  margin:0 auto;
+  text-align:center;
+  top: 10px;
+  position: relative;
+}
+.dot{
+  display:inline-block;
+  border-radius:50%;
+  background:#d3d3d3;
+  padding:6px;
+  margin:2px 10px;
+  font-size: 200px;
+}
+
+.active{
+  background:#ffd900;
+}
+
+@media (max-width:567px){
+  #slider{
+    width:100%;
+
+  }
+}
+
+
+    #banner{
+        position: relative;
+        width: 980px;
+        height: 450px;
+        border-bottom: 1px solid white;
+    }
+
+    #top{
+        position: relative;
+        background-color: rgb(0, 0, 0);
+        height: 50px;
+        width: 980px;
+        top: 8px;
+    }
+    #tt{
+        position: absolute;
+        font-size: 35px;
+        color: white;
+        display: inline-block;
+        left: 20px;
+    }
+    #tc{
+        position: absolute;
+        font-size: 35px;
+        color: rgba(246, 255, 0, 1) ;
+        display: inline-block;
+        right: 20px;
+    }
+
+    #ytt{
+        position: absolute;
+        font-size: 36px;
+        color: rgba(255, 255, 255, 0.56);
+        display: inline-block;
+        left: 20px;
+        top: 15px;
+        font-family: Lexend;
+        text-align: center;
+
+    }
+    #yl{
+        position: relative;
+        height: 80px;
+        width: 960px;
+        background-color:rgba(29, 28, 28, 1);
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+    #yt{
+        display: inline-block;
+        position:relative;
+        width: 960px;
+        background-color: rgb(0, 0, 0);
+        left: 0px;
+        margin-left:10px ;
+        padding: 0px;
+  
+    }
+    #vay{
+      position: relative;
+      height: 80px;
+      width: 960px;
+      left: 10px;
+      background-color: rgba(246, 255, 0, 1);
+      border-radius: 10px;
+    }
+    #vayt{
+      position: absolute;
+        font-size: 40px;
+        color: rgb(0, 0, 0);
+        display: inline-block;
+        left: 200px;
+        top: 13px;
+        font-family: Lexend;
+        text-align: center;
+    }
+    #aitext{
+        position: absolute;
+        left: 15px;
+        top: 380px;
+        color: var(--icon-color, #FFF);
+        font-family: Lexend;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    #ai{
+        position: absolute;
+        width: 230px;
+        height: 360px;
+        top: 10px;
+        left: 10px;
+        border-radius: 10px;
+    }
+
+    .scroll{
+        position: relative;
+        top: 0px;
+        left: 10px;
+        background-color:rgb(0, 0, 0);
+        height: 450px;
+        width: 960px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+    #a{
+        position: relative;
+        width: 250px;
+        height: 430px;
+        top: 10px;
+        border-radius: 10px;
+        background-color: rgba(29, 28, 28, 1);
+        margin-left: 5px;
+        display: inline-block;
+        z-index: 5;
+        overflow-x: hidden;
+        white-space: nowrap;
+
+    }
+    
+    body {
+  font-family: 'Lato', sans-serif;
+}
+
+.overla {
+  height: 100%;
+  width: 0%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background-color: rgb(16, 16, 19);
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.overla a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+#close{
+    position: absolute; 
+    width: 70px;
+    top: 20px;
+    left: 20px;
+}
+
+
+
+    *{
+        padding: 0%;
+        margin: 0%;
+        text-decoration: none;
+    }
+    #navimg{
+        position: absolute;
+        top: 100px;
+        width: 420px;
+        height: 420px;
+        left: 20px;
+        border-radius: 5px;
+        z-index: 10;
+    }
+    #navb{
+        position: relative;
+        width: 420px;
+        height: 90px;
+        left: 20px;
+        top: 530px;
+        margin-bottom:-17px;
+        z-index: 10;
+        
+        
+    }
+    #menu{
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        top: 20px;
+        left: 20px;
+    }
+    #title{
+        position: absolute;
+        width: 300px;
+        top: 15px;
+        left: 340px;
+    }
+    #search{
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 23px;
+        right: 23px;
+    }
+
+</style>
+
+<script>
+    function openNav() {
+      document.getElementById("myNav").style.width = "460px";
+    }
+    
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+    </script>
+
 </html>

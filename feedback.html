@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>About</title>
+    <title>Feedback</title>
     <link rel="stylesheet"  href="./index.css" />
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&display=swap" />
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=NATS:wght@400&display=swap" />
@@ -17,112 +17,77 @@
     <a href="/About.html"><img id="navb" src="./M Image/N-about.png"/></a>
   </div>
 
-<body style="background-color: rgb(0, 0, 0); width: 980px;">
+<body style="background-color: rgb(0, 0, 0); width: 980px; color:white; font-family:'Lexend',sans-serif;">
 
     <div style="position: relative; background-color: rgb(0, 0, 0); height: 110px; width: 980px;">
         <img id="menu" onclick="openNav()" src="./M Image/Menu icon.png"/>
         <img id="title" src="./M Image/Vip Title.png"/>
         <a href="./search.html"><img id="search" src="./M Image/Search icon.png"/></a>
     </div>
-<!-- PAGE CONTENT -->
-<div style="width:900px; background:#111;padding: 40px; border-radius:20px;">
 
-<h1 style="font-size:40px; margin-bottom:25px; color:rgba(246, 255, 0, 1);">About TVK Movies</h1>
+<!-- FEEDBACK CONTENT -->
+<div style="width:900px;background:#111; padding:40px; border-radius:20px;">
 
-<p style="line-height:1.6;">
-TVK Movies – Vintage Cinema is a digital collection of classic films that are legally available in the public domain.
-Our mission is to preserve and provide access to historical cinema for educational and entertainment purposes.
+<h1 style="font-size:40px; margin-bottom:20px; color:rgba(246, 255, 0, 1);">User Feedback</h1>
+
+<p style="font-size:25px; line-height:1.6;">
+We value your feedback! Your suggestions help improve TVK Movies – Vintage Cinema.
+If you experience any issues or have recommendations, please let us know.
 </p>
 
 <br><br>
 
-<h2>Public Domain Policy</h2>
+<form style="display:flex; flex-direction:column; gap:20px;">
 
-<p style=" line-height:1.6;">
-All movies featured in this app/website are verified to be in the public domain.
-Public domain works are films whose copyrights have expired or were released into the public domain under applicable laws.
-These works are legally free to watch, distribute, and share.
-</p>
+<label style="font-size:25px;">Your Name</label>
+<input type="text" placeholder="Enter your name"
+style="padding:15px; border-radius:8px; border:none; font-size:25px;">
 
-<br>
+<label style="font-size:25px;">Email Address</label>
+<input type="email" placeholder="Enter your email"
+style="padding:15px; border-radius:8px; border:none; font-size:25px;">
 
-<h2>Content Source & Attribution</h2>
+<label style="font-size:25px;">Feedback Type</label>
+<select style="padding:15px; border-radius:8px; border:none; font-size:25px;">
+    <option>General Feedback</option>
+    <option>Bug Report</option>
+    <option>Content Suggestion</option>
+    <option>Copyright Concern</option>
+</select>
 
-<p style=" line-height:1.6;">
-Movie content is sourced from trusted public archives such as:
-</p>
+<label style="font-size:25px;">Your Message</label>
+<textarea rows="6" placeholder="Write your feedback here..."
+style="padding:15px; border-radius:8px; border:none; font-size:25px;"></textarea>
 
-<ul style=" margin-left:20px; line-height:1.8;color: rgba(0, 247, 255, 0.796);font-size: 30px;">
-<li>Internet Archive (archive.org)</li>
-<li>Wikimedia Commons</li>
-<li>Other verified public domain repositories</li>
-</ul>
+<button type="submit"
+style="padding:18px; background:rgba(246, 255, 0, 1); border:none; border-radius:10px; font-size:25px; color:rgb(0, 0, 0); cursor:pointer;font-weight: bolder;">
+Submit Feedback
+</button>
 
-<p style="line-height:1.6;">
-Each movie is clearly marked as Public Domain on its respective archive page.
-TVK Movies does not modify or claim ownership of any film content.
-</p>
+</form>
 
-<br>
+<br><br>
 
-<h2>No Hosting Disclaimer</h2>
+<h2 style="color:rgba(246, 255, 0, 1);">Important Notice</h2>
 
-<p style="line-height:1.6;">
-TVK Movies does not host, upload, or store any video files.
-All streaming links redirect users to official external public archives.
-</p>
-
-<br>
-
-<h2>Copyright & DMCA Notice</h2>
-
-<p style=" line-height:1.6;">
-If you are a copyright owner and believe that any material has been included in error,
-please contact us with proper documentation.
-We will review and remove the content promptly if necessary.
-</p>
-
-<br>
-
-<h2>Educational Purpose</h2>
-
-<p style=" line-height:1.6;">
-This platform is intended for educational, historical, and entertainment purposes.
-We aim to promote appreciation of classic cinema and film history.
-</p>
-
-<br>
-
-<h2>Contact Information</h2>
-
-<p style=" line-height:1.6;">
-For copyright concerns, corrections, or general inquiries:<br><br>
-📧 Email: kanchanavenkatasen1986@email.com
+<p style="font-size:20px; line-height:1.6;">
+TVK Movies only provides access to films that are in the public domain.
+If you believe any content has been included incorrectly, please select
+“Copyright Concern” and provide details. We will review and take appropriate action.
 </p>
 
 </div>
 
 <!-- FOOTER -->
-<div style="text-align:center;color:gray; margin:40px 0;">
+<div style="text-align:center; font-size:20px; color:gray; margin:40px 0;">
 © 2026 TVK Movies – Vintage Cinema<br>
-All content is sourced from public domain archives.
+Public Domain Movies Only
 </div>
 
-
-
 </body>
+
     
 <style>
-    h2{
-        padding: 20px;
-        font-size: 35px;
-        color: rgba(246, 255, 0, 1);
-    }
-    p{
-        color: #ffffff;
-        padding: 10px;
-        font-size: 25px;
-    }
 
     body {
   font-family: 'Lato', sans-serif;

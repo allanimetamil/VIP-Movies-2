@@ -1,0 +1,302 @@
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Page</title>
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&display=swap" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=NATS:wght@400&display=swap" />
+</head>
+
+<div id="myNav" class="overla">
+    <img id="close" onclick="closeNav()" src="../M Image/Close icon.png"/>
+    <img id="navimg" src="../M Image/VIP Movies.jpg"/>
+    <a href="/index.html"><img id="navb" src="../M Image/N-Home.png"/></a>
+    <a href="/feedback.html"><img id="navb" src="../M Image/N-feedback.png"/></a>
+    <a href="/About.html"><img id="navb" src="../M Image/N-about.png"/></a>
+  </div>
+
+<body style="background-color: rgb(0, 0, 0); width: 980px;">
+
+    <div style="position: relative; background-color: rgb(0, 0, 0); height: 110px; width: 980px;">
+        <img id="menu" onclick="openNav()" src="../M Image/Menu icon.png"/>
+        <img id="title" src="../M Image/Vip Title.png"/>
+        <a href="/search.html"><img id="search" src="../M Image/Search icon.png"/></a>
+    </div>
+
+<!-- MOVIE TOP -->
+<div id="top">
+<img id="poster" src="">
+
+<div id="movietitle">Captain Kidd</div>
+
+<div class="info" id="i1">year : 1945</div>
+<div class="info" id="i2">genre : Adventure Drama</div>
+<div class="info" id="i3">director : Rowland V. Lee</div>
+<div class="info" id="i4">duration : 90 minutes</div>
+<div class="info" id="i5"></div>
+</div>
+
+
+
+<!-- STORY -->
+<div style="text-align: center;width: 900px;" class="section">
+<h2>Movie Overview</h2>
+<p>
+A swashbuckling pirate adventure film starring Charles Laughton
+</p>
+</div>
+
+<!-- WATCH BUTTON -->
+<div id="pd">
+    <a class="watch-btn" href="" target="_blank">
+        ▶ Watch on Archive.org
+    </a>
+</div>
+
+
+
+<!-- SOURCE ATTRIBUTION -->
+<div style="margin-top:100px ;border-radius: 0px;" class="section">
+<h2 style="opacity: 75%;">Source Attribution</h2>
+<p style="opacity: 75%;">
+This film is sourced from the Internet Archive (archive.org), a trusted public digital archive.  
+The movie is clearly marked as Public Domain within the archive.
+</p>
+</div>
+
+<!-- PUBLIC DOMAIN DISCLAIMER -->
+<div style="border-radius: 0px;" class="section">
+<h2 style="opacity: 75%;">Public Domain & Legal Disclaimer</h2>
+<p style="opacity: 75%;">
+TVK Movies provides access only to films that are verified to be in the public domain.
+These works are legally free to watch, share, and distribute under applicable copyright laws.
+</p>
+
+<p style="opacity: 75%;">
+This website does not host, upload, or store any video files.  
+All streaming links redirect users to official public archives such as Internet Archive.
+</p>
+
+<p style="opacity: 75%;">
+The developer does not claim ownership of any film content.
+If you believe any material has been included incorrectly, please contact us for review.
+</p>
+</div>
+
+<div class="footer">
+© 2026 TVK Movies – Vintage Cinema | Educational & Historical Film Archive
+</div>
+
+</body>
+    
+<style>
+
+/* MOVIE SECTION */
+#top{
+    width: 980px;
+    height: 450px;
+    position:relative;
+    
+}
+#poster{
+    position:absolute;
+    width:300px;
+    height: 400px;
+    top:20px;
+    left:30px;
+    border:4px solid white;
+    border-radius:10px;
+}
+#movietitle{
+    position:absolute;
+    left:370px;
+    top:100px;
+    font-size:50px;
+    font-weight: bolder;
+    color: #ffffff;
+}
+.info{
+    position:absolute;
+    left:370px;
+    font-weight: bolder;
+    font-size:22px;
+    color:rgba(255,255,255,0.8);
+    padding: 10px;
+}
+#i1{top:220px;}
+#i2{top:260px;}
+#i3{top:300px;}
+#i4{top:340px;}
+#i5{top:380px;}
+
+
+
+
+/* WATCH BUTTON */
+#pd{
+    position:relative;
+    height:120px;
+    text-align:center;
+}
+.watch-btn{
+    display:inline-block;
+    padding:20px 0px;
+    background:rgba(246, 255, 0, 1);
+    border-radius:10px;
+    width: 960px;
+    font-size:30px;
+    font-weight: bolder;
+    margin-top:20px;
+    color:rgb(0, 0, 0);
+}
+.watch-btn:hover{
+    background:rgba(246, 255, 0, 1);
+}
+
+
+
+
+
+
+
+/* DESCRIPTION */
+.section{
+    width:940px;
+    margin:20px auto;
+    background:#111;
+    padding:25px;
+    border-radius:15px;
+}
+.section h2{
+    margin-bottom:15px;
+    color:rgba(246, 255, 0, 1);
+}
+.footer{
+    text-align:center;
+    font-size: 20px;
+    font-weight: bolder;
+    color:rgb(213, 195, 195);
+    margin:40px 0;
+}
+p{
+    font-size: 30px;
+    font-weight: bolder;
+    color: #d5cfcf;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    body {
+  font-family: 'Lato', sans-serif;
+}
+
+.overla {
+  height: 100%;
+  width: 0%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background-color: rgb(16, 16, 19);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overla a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+#close{
+    position: absolute; 
+    width: 70px;
+    top: 20px;
+    left: 20px;
+}
+
+
+
+    *{
+        padding: 0%;
+        margin: 0%;
+        text-decoration: none;
+    }
+    #navimg{
+        position: absolute;
+        top: 100px;
+        width: 420px;
+        height: 420px;
+        left: 20px;
+        border-radius: 5px;
+        z-index: 10;
+    }
+    #navb{
+        position: relative;
+        width: 420px;
+        height: 90px;
+        left: 20px;
+        top: 530px;
+        margin-bottom:-17px;
+        z-index: 10;
+        
+        
+    }
+    #menu{
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        top: 20px;
+        left: 20px;
+    }
+    #title{
+        position: absolute;
+        width: 300px;
+        top: 15px;
+        left: 340px;
+    }
+    #search{
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 23px;
+        right: 23px;
+    }
+
+</style>
+
+<script>
+    function openNav() {
+      document.getElementById("myNav").style.width = "460px";
+    }
+    
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+    </script>
+
+</html>
