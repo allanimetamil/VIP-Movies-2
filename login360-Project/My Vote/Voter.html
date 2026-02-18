@@ -4,8 +4,9 @@
     <title>My Vote</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&display=swap" />
-  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=NATS:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=NATS:wght@400&display=swap" />
 </head>
+
 <style>
     *{
         padding: 0%;
@@ -21,15 +22,8 @@
         background-color: rgb(255, 255, 255);
         border: 1px solid wheat;
     }
-    #title{
-        height:70px ;
-        
-    }
-    #logo{
-        
-        height: 50px;
-        padding: 25px;
-    }
+    #title{ height:70px; }
+    #logo{ height: 50px; padding: 25px; }
     #main{
         width: 80%;
         margin: 5%;
@@ -37,9 +31,7 @@
         background-color: antiquewhite;
         border-radius: 10px;
     }
-    h2{
-        text-align: center;
-    }
+    h2{ text-align: center; }
     input{
         width: 90%;
         color: rgb(105, 101, 101);
@@ -48,15 +40,12 @@
         border: 2px solid rgb(90, 87, 87);
         border-radius: 5px;
     }
-    label{
-        padding: 10px;
-    }
+    label{ padding: 10px; }
     #party{
         padding: 10px;
         margin: 10px;
         border: 2px solid rgb(90, 87, 87);
         border-radius: 5px;
-
     }
     button{
         padding: 10px;
@@ -78,42 +67,64 @@
         color: red;
     }
 </style>
+
 <body>
-    <nav>
-        <img id="title" src="./Title.png"/>
-        <img id="logo" src="./Government-Of-Tamil-Nadu-Logo-Vector.svg-.png" />
-    </nav>
 
-    <div id="main">
+<nav>
+    <img id="title" src="./Title.png"/>
+    <img id="logo" src="./Government-Of-Tamil-Nadu-Logo-Vector.svg-.png" />
+</nav>
 
-    
+<div id="main">
 
-    <h2>TamilNadu Voting Portal</h2>
+<h2>TamilNadu Voting Portal</h2>
 
-    <img id="resultImg" width="300px"><br>
-    <h3 id="result"></h3>
+<img id="resultImg" width="300px"><br>
+<h3 id="result"></h3>
 
-    <label>Name:</label><br>
-    <input type="text" id="name"><br><br>
+<label>Name:</label><br>
+<input type="text" id="name"><br><br>
 
-    <label>Age:</label><br>
-    <input type="number" id="age"><br><br>
+<label>Age:</label><br>
+<input type="number" id="age"><br><br>
 
-    <label>Select Party:</label><br>
-    <select id="party">
-        <option value="">--Choose Party--</option>
-        <option value="TVK">TVK</option>
-        <option value="DMK">DMK</option>
-        <option value="ADMK">ADMK</option>
-        <option value="NTK">NTK</option>
-    </select><br><br>
+<label>Select Party:</label><br>
+<select id="party">
+    <option value="">--Choose Party--</option>
+    <option value="TVK">TVK</option>
+    <option value="DMK">DMK</option>
+    <option value="ADMK">ADMK</option>
+    <option value="NTK">NTK</option>
+</select><br><br>
 
-    <button onclick="vote()">Submit Vote</button>
+<button onclick="vote()">Submit Vote</button>
 
-    </div>
+</div>
 
-<script>
-function vote() {
+<!-- ✅ Firebase + Vote Function Inside SAME module -->
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-analytics.js";
+import { getFirestore, collection, addDoc } 
+from "https://www.gstatic.com/firebasejs/12.9.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAUHjP9TZMyMptZX-sf0RLn12zLNH6b7Kg",
+  authDomain: "login-360-f227f.firebaseapp.com",
+  projectId: "login-360-f227f",
+  storageBucket: "login-360-f227f.firebasestorage.app",
+  messagingSenderId: "972687843252",
+  appId: "1:972687843252:web:80e0946e74260cdc449ce1",
+  measurementId: "G-XVDPV3G96T"
+};
+
+const app = initializeApp(firebaseConfig);
+getAnalytics(app);
+const db = getFirestore(app);
+
+window.vote = async function() {
+
     let name = document.getElementById("name").value;
     let age = Number(document.getElementById("age").value);
     let party = document.getElementById("party").value;
@@ -121,7 +132,7 @@ function vote() {
     let resultText = document.getElementById("result");
     let resultImg = document.getElementById("resultImg");
 
-    if (name === "" || party === "" || age === "" ) {
+    if (name === "" || party === "" || !age) {
         resultText.innerText = "Please fill all details!";
         resultImg.src = "";
         return;
@@ -133,21 +144,34 @@ function vote() {
         return;
     }
 
-    if (party === "DMK") {
-        resultImg.src = "DMK.webp";
-    } 
-    else if (party === "ADMK") {
-        resultImg.src = "ADMK.webp";
-    } 
-    else if (party === "TVK") {
-        resultImg.src = "TVK.jpg";
-    } 
-    else if (party === "NTK") {
-        resultImg.src = "NTK.jpg";
-    }
+        if (party === "DMK") {
+            resultImg.src = "DMK.webp";
+        } 
+        else if (party === "ADMK") {
+            resultImg.src = "ADMK.webp";
+        } 
+        else if (party === "TVK") {
+            resultImg.src = "TVK.jpg";
+        } 
+        else if (party === "NTK") {
+            resultImg.src = "NTK.jpg";
+        }
 
-    resultText.innerText = "😇 Thank you " + name + " for voting to " + party +" 🥳...";
+        resultText.innerText = "😇 Thank you " + name + " for voting to " + party +" 🥳...";
+
+        try {
+    await addDoc(collection(db, "votes"), {
+        name: name,
+        age: age,
+        party: party,
+        time: new Date()
+    });
+} catch(error){
+    console.error(error);
 }
+
+}
+
 </script>
 
 </body>
