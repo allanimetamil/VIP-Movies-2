@@ -130,12 +130,14 @@ window.vote = async function() {
     let resultImg = document.getElementById("resultImg");
 
     if (name === "" || party === "" || !age) {
+        resultText.style.color = "red";
         resultText.innerText = "Please fill all details! ❌";
         resultImg.src = "";
         return;
     }
 
     if (age < 18) {
+        resultText.style.color = "red";
         resultText.innerText = name + " You are not eligible to vote! ❌";
         resultImg.src = "";
         return;
