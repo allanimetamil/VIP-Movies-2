@@ -153,10 +153,10 @@ window.vote = async function() {
         else if (party === "TVK") resultImg.src = "TVK.jpg";
         else if (party === "NTK") resultImg.src = "NTK.jpg";
 
-        resultText.innerText = "Vote Submitted Successfully ✅";
+        resultText.innerText = "😇 Thank you " + name + " for voting to " + party +" 🥳..." + "Vote Submitted Successfully ✅";
 
     } catch (error) {
-        resultText.innerText = "Error: Check Firestore Rules!";
+        resultText.innerText = "Error: server problem!";
         console.error(error);
     }
 };
