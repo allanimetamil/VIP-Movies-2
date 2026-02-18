@@ -124,11 +124,13 @@ function vote() {
 
     if (name === "" || party === "" || age === "" ) {
         resultText.innerText = "Please fill all details!";
+        resultImg.src = "";
         return;
     }
 
     if (age < 18) {
         resultText.innerText = "You are not eligible to vote!";
+        resultImg.src = "";
         return;
     }
 
