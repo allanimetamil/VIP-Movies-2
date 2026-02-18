@@ -139,6 +139,13 @@ window.vote = async function() {
         return;
     }
 
+    if (party === "DMK") resultImg.src = "DMK.webp";
+        else if (party === "ADMK") resultImg.src = "ADMK.webp";
+        else if (party === "TVK") resultImg.src = "TVK.jpg";
+        else if (party === "NTK") resultImg.src = "NTK.jpg";
+
+        resultText.innerText = "😇 Thank you " + name + " for voting to " + party +" 🥳..." + "Vote Submitted Successfully ✅";
+
     try {
 
         await addDoc(collection(db, "votes"), {
@@ -147,13 +154,6 @@ window.vote = async function() {
             party: party,
             time: new Date()
         });
-
-        if (party === "DMK") resultImg.src = "DMK.webp";
-        else if (party === "ADMK") resultImg.src = "ADMK.webp";
-        else if (party === "TVK") resultImg.src = "TVK.jpg";
-        else if (party === "NTK") resultImg.src = "NTK.jpg";
-
-        resultText.innerText = "😇 Thank you " + name + " for voting to " + party +" 🥳..." + "Vote Submitted Successfully ✅";
 
     } catch (error) {
         resultText.innerText = "Error: server problem!";
