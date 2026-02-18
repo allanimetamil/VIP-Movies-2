@@ -131,11 +131,13 @@ window.vote = async function() {
 
     if (name === "" || party === "" || !age) {
         resultText.innerText = "Please fill all details!";
+        resultImg.src = "";
         return;
     }
 
     if (age < 18) {
         resultText.innerText = name + " You are not eligible to vote!";
+        resultImg.src = "";
         return;
     }
 
@@ -144,6 +146,7 @@ window.vote = async function() {
         else if (party === "TVK") resultImg.src = "TVK.jpg";
         else if (party === "NTK") resultImg.src = "NTK.jpg";
 
+        resultText.style.color = "green";
         resultText.innerText = "😇 Thank you " + name + " for voting to " + party +" 🥳..." + " Vote Submitted Successfully ✅";
 
     try {
