@@ -105,7 +105,6 @@
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-analytics.js";
 import { getFirestore, collection, addDoc } 
 from "https://www.gstatic.com/firebasejs/12.9.0/firebase-firestore.js";
 
@@ -115,12 +114,10 @@ const firebaseConfig = {
   projectId: "login-360-f227f",
   storageBucket: "login-360-f227f.firebasestorage.app",
   messagingSenderId: "972687843252",
-  appId: "1:972687843252:web:80e0946e74260cdc449ce1",
-  measurementId: "G-XVDPV3G96T"
+  appId: "1:972687843252:web:80e0946e74260cdc449ce1"
 };
 
 const app = initializeApp(firebaseConfig);
-getAnalytics(app);
 const db = getFirestore(app);
 
 window.vote = async function() {
@@ -134,13 +131,11 @@ window.vote = async function() {
 
     if (name === "" || party === "" || !age) {
         resultText.innerText = "Please fill all details!";
-        resultImg.src = "";
         return;
     }
 
     if (age < 18) {
         resultText.innerText = name + " You are not eligible to vote!";
-        resultImg.src = "";
         return;
     }
 
@@ -153,29 +148,21 @@ window.vote = async function() {
             time: new Date()
         });
 
-        if (party === "DMK") {
-            resultImg.src = "DMK.webp";
-        } 
-        else if (party === "ADMK") {
-            resultImg.src = "ADMK.webp";
-        } 
-        else if (party === "TVK") {
-            resultImg.src = "TVK.jpg";
-        } 
-        else if (party === "NTK") {
-            resultImg.src = "NTK.jpg";
-        }
+        if (party === "DMK") resultImg.src = "DMK.webp";
+        else if (party === "ADMK") resultImg.src = "ADMK.webp";
+        else if (party === "TVK") resultImg.src = "TVK.jpg";
+        else if (party === "NTK") resultImg.src = "NTK.jpg";
 
-        resultText.innerText = "😇 Thank you " + name + " for voting to " + party +" 🥳...";
+        resultText.innerText = "Vote Submitted Successfully ✅";
 
     } catch (error) {
-        resultText.innerText = "Error submitting vote! Some Internet Issue";
+        resultText.innerText = "Error: Check Firestore Rules!";
         console.error(error);
     }
-
 };
 
 </script>
+
 
 </body>
 </html>
