@@ -1,0 +1,32 @@
+Trigger Reward-Ads Key :
+
+<html>
+
+<a href="watch.html?reward="></a>
+
+watch.html?reward=
+
+</html>
+
+    --------
+
+Beybass Reward-Ads Browser Script :
+
+<script>
+
+(function () {
+    const params = new URLSearchParams(window.location.search);
+    const next = params.get("reward");
+
+    if (next) {
+        // Normal browser fallback
+        window.location.replace(next);
+    }
+})();
+
+</script>
+
+
+     --------
+
+     
