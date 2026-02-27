@@ -6,6 +6,7 @@
     <title>Movie Page</title>
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&display=swap" />
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=NATS:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <div id="myNav" class="overla">
@@ -26,9 +27,40 @@
 
 <!-- MOVIE TOP -->
 <div id="top">
+
+<button onclick="shareApp()"
+style="
+position:absolute;
+right:20px;
+top:10px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+width:230px;
+height:55px;
+font-size:20px;
+font-weight:600;
+background-color:#25D366;
+color:#ffffff;
+border:none;
+border-radius:30px;
+cursor:pointer;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+">
+
+<i class="fa-brands fa-whatsapp" style="font-size:24px;"></i>
+Share Movies
+
+</button>
+
 <img id="poster" src="../Movies-img/Nosferatu.jpg">
 
+
+
 <div id="movietitle">Nosferatu</div>
+
+
 
 <div class="info" id="i1">year : 1922</div>
 <div class="info" id="i2">genre : Silent Horror</div>
@@ -290,6 +322,29 @@ p{
 </style>
 
 <script>
+      function shareApp() {
+
+    var message =
+        "Watch Free Tamil Movies 🎬\n\n" +
+        "Download our app and enjoy unlimited entertainment!\n\n" +
+        "Play Store:\nhttps://play.google.com/store/apps/details?id=com.yourapp.package\n\n" +
+        "Direct APK:\nhttps://yourwebsite.com/app.apk";
+
+    if (navigator.share) {
+
+        navigator.share({
+            text: message
+        });
+
+    } else {
+
+        var whatsappURL = "https://wa.me/?text=" + encodeURIComponent(message);
+        window.open(whatsappURL, "_blank");
+
+    }
+}
+
+
     function openNav() {
       document.getElementById("myNav").style.width = "460px";
     }
